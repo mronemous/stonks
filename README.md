@@ -10,7 +10,7 @@ NOTE: Very much a work and progress and mostly to practice using the target tech
 
 ##Features
 * Provides daily advice each morning on stocks to buy or sell.
-* Sends realtime alert when prices jump up/down quickly
+* Sends realtime alert when prices jump quickly
 * Predicts the fair value for a stock based on:
     * Expert opinions
     * Financial performance 
@@ -18,7 +18,7 @@ NOTE: Very much a work and progress and mostly to practice using the target tech
     * Momentum
     * Company sentiment or events
     * Past history
-* Shows metrics such as rolling averages, PE, ect...
+* Shows metrics such as rolling averages, PE ratio, ect...
 
 ##Draft Architecture
 ![High Level](/stonks-high-level-architecture.png?raw=true "High Level Architecture")
