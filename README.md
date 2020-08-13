@@ -31,4 +31,4 @@ NOTE: Very much a work and progress and mostly to practice using the target tech
     * DynamoDB (recent hot data)
     * SageMaker (modeling, training, predictions)
 * Python backend
-* Kotlin Native frontend: web, android, ios
+* Kotlin cross-platform frontend: web, android, ios
