@@ -41,4 +41,4 @@ NOTE: Very much a work and progress and mostly to practice using the target tech
     * Athena 
         * big data query support 
 * Python backend
-* Kotlin Native frontend: web, android, ios
+* Kotlin cross-platform frontend: web, android, ios
