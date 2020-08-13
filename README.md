@@ -26,7 +26,7 @@ NOTE: Very much a work and progress and mostly to practice using the target tech
 ## Target Technologies
 * Terraform for infrastructure setup (AWS)
     * Glue 
-        * API poll/produce events **This may need to be EMR or EC2 (to produce events quickly). Direct stream API may exists.
+        * API poll/produce events **This may need to be EMR or EC2 (to produce events quickly), or Direct stream API may exists.
         * Crawl S3 for data catalog
     * Kinesis Data Streams
         * realtime to multiple consumers
