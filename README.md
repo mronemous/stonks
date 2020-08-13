@@ -3,12 +3,12 @@ A stock portfolio advisor. Missing stock buying opportunities is easy when you'r
 
 NOTE: Very much a work and progress and mostly to practice using the target technologies.
 
-##Data Sources
+## Data Sources
 * Stock price data
 * Twitter sentiment
 * Google trends
 
-##Features
+## Features
 * Provides daily advice each morning on stocks to buy or sell.
 * Sends realtime alert when prices jump quickly
 * Predicts the fair value for a stock based on:
@@ -20,15 +20,25 @@ NOTE: Very much a work and progress and mostly to practice using the target tech
     * Past history
 * Shows metrics such as rolling averages, PE ratio, ect...
 
-##Draft Architecture
+## Draft Architecture
 ![High Level](/stonks-high-level-architecture.png?raw=true "High Level Architecture")
 
-##Target Technologies
+## Target Technologies
 * Terraform for infrastructure setup (AWS)
-    * Kinesis Data Streams (realtime)
-    * Kinesis Firehose (store as Parquet in S3)
-    * S3 (raw data lake)
-    * DynamoDB (recent hot data)
-    * SageMaker (modeling, training, predictions)
+    * Glue 
+        * API poll/produce events **This may need to be EMR or EC2 (to produce events quickly)
+        * Crawl S3 for data catalog
+    * Kinesis Data Streams
+        * realtime to multiple consumers
+    * Kinesis Firehose
+        * store as Parquet in S3
+    * S3
+        * raw data lake
+    * DynamoDB
+        * recent hot data, and user config for app
+    * SageMaker
+        * modeling, training, predictions
+    * Athena 
+        * big data query support 
 * Python backend
 * Kotlin Native frontend: web, android, ios
