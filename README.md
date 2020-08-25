@@ -25,7 +25,7 @@ NOTE: Very much a work and progress and mostly to practice using the target tech
 
 ## Target Technologies
 * Terraform for infrastructure setup (AWS)
-    * API Gateway
+    * EC2
         * transform provided websockets into streams
     * Glue 
         * Crawl S3 for data catalog
