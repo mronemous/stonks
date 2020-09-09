@@ -195,7 +195,8 @@ resource "aws_iam_policy" "kinesis_namespace" {
     {
       "Action": [
         "kinesis:DescribeStream",
-        "kinesis:PutRecord"
+        "kinesis:PutRecord",
+        "kinesis:PutRecords"
       ],
       "Effect": "Allow",
       "Resource": [

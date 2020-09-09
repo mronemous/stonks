@@ -22,9 +22,9 @@ The pipeline is designed to practice using target technologies. It will prepare 
 * Shows metrics such as rolling averages, PE ratio, ect...
 
 ## Repos
-* stonks - architecture and terraform scripts
-* stonks-sample-app - public facing web site to practice ingress into Fargate
-* stonks-trade-ingest-app - websocket adapter into Kinesis data stream
+* [stonks](https://github.com/mronemous/stonks) - architecture and terraform scripts
+* [stonks-sample-app](https://github.com/mronemous/stonks-sample-app) - public facing web site to practice ingress into Fargate
+* [stonks-trade-ingest-app](https://github.com/mronemous/stonks-trade-ingest-app) - websocket adapter into Kinesis data stream
 
 ## High Level Architecture
 ![High Level](docs//stonks-high-level-architecture.png?raw=true "High Level Architecture")
