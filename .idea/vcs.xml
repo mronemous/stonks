@@ -2,5 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/stonks/examples/_eks/.terraform/modules/eks" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/stonks/examples/_eks/.terraform/modules/vpc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/stonks/terraform/_eks/.terraform/modules/eks" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/stonks/terraform/_eks/.terraform/modules/vpc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/stonks/terraform/eks/.terraform/modules/eks" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/stonks/terraform/eks/.terraform/modules/vpc" vcs="Git" />
   </component>
 </project>
