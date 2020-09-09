@@ -21,10 +21,15 @@ The pipeline is designed to practice using target technologies. It will prepare 
     * Past history
 * Shows metrics such as rolling averages, PE ratio, ect...
 
+## Repos
+* stonks - architecture and terraform scripts
+* stonks-sample-app - public facing web site to practice ingress into Fargate
+* stonks-trade-ingest-app - websocket adapter into Kinesis data stream
+
 ## High Level Architecture
 ![High Level](docs//stonks-high-level-architecture.png?raw=true "High Level Architecture")
 
-###Components
+### Components
 
 EKS Cluster - consisting of Fargate pods which:
 * transform stock trade websocket into stream
@@ -64,12 +69,7 @@ AWS Secret Manager
 ECR / Jenkins / Github
 * Docker image storage and CI
 
-###Code
+### Code
 * Python backend
 * Kotlin cross-platform frontend: web, android, ios
 * AWS Terraform for infrastructure as code
-
-###Repos
-* stonks - architecture and terraform scripts
-* stonks-sample-app - public facing web site to practice ingress into Fargate
-* stonks-trade-ingest-app - websocket adapter into Kinesis data stream
