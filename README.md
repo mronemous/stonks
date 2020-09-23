@@ -35,7 +35,7 @@ EKS Cluster - consisting of Fargate pods which:
 * transform stock trade websocket into stream
 * validate, and transform into data for app and ML
 * micro-services for the app
-* ingress controller which allows pod public facing inet apps 
+* ingress controller which allows public facing inet pods 
 * IAM policies control what AWS services pods can use
 
 Glue 
