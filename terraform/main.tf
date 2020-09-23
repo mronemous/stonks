@@ -65,53 +65,6 @@ module "ecr-validator-app" {
   default_tags       = var.default_tags
 }
 
-#Kinesis Data Streams
-resource "aws_kinesis_stream" "trades" {
-  name             = "${var.name}-${local.environment}-trades"
-  shard_count      = 1
-  retention_period = 24
-
-  tags = merge(var.default_tags, {
-    Name        = "${var.name}-${local.environment}-trades"
-  })
-}
-
-#S3
-resource "aws_s3_bucket" "data_lake" {
-  bucket = "${var.unique_slug}-${var.name}-${local.environment}"
-  acl    = "private"
-
-  versioning {
-    enabled = true
-  }
-
-  tags = merge(var.default_tags, {
-    Name        = "${var.name}-${local.environment}-s3"
-  })
-}
-
-#Kinesis Firehose Delivery
-resource "aws_kinesis_firehose_delivery_stream" "test_stream" {
-  name        = "${var.name}-${local.environment}-trades"
-  destination = "s3"
-
-  kinesis_source_configuration {
-    kinesis_stream_arn = aws_kinesis_stream.trades.arn
-    role_arn = aws_iam_role.firehose_role.arn
-  }
-
-  s3_configuration {
-    role_arn   = aws_iam_role.firehose_role.arn
-    bucket_arn = aws_s3_bucket.data_lake.arn
-
-    cloudwatch_logging_options {
-      enabled = true
-      log_group_name = "${var.name}-${local.environment}-trades-firehose"
-      log_stream_name = "${var.name}-${local.environment}-trades-firehose"
-    }
-  }
-}
-
 #Secrets Store
 resource "aws_secretsmanager_secret" "main" {
   name = "${var.name}-${local.environment}"
@@ -122,4 +75,12 @@ resource "aws_secretsmanager_secret" "main" {
 }
 data "aws_secretsmanager_secret_version" "main" {
   secret_id     = aws_secretsmanager_secret.main.name
+
+  depends_on = [aws_secretsmanager_secret.main]
+}
+
+data "archive_file" "lambda" {
+ type = "zip"
+ source_dir = "../src/lambdas"
+ output_path = "../.build/lambdas.zip"
 }
